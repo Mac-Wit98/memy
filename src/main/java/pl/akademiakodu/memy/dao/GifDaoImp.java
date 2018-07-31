@@ -5,7 +5,7 @@ import pl.akademiakodu.memy.model.Gif;
 import java.util.ArrayList;
 import java.util.List;
 
-public class GifDaoImp implements GifDao {
+public class GifDaoImp implements GifDao  {
 
     private static List<Gif> gifs = new ArrayList<>();
 

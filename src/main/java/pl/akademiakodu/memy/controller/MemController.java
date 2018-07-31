@@ -3,6 +3,7 @@ package pl.akademiakodu.memy.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
+import pl.akademiakodu.memy.dao.CategoryDao;
 import pl.akademiakodu.memy.dao.GifDao;
 import pl.akademiakodu.memy.dao.GifDaoImp;
 import pl.akademiakodu.memy.model.Gif;
@@ -28,7 +29,7 @@ public class MemController {
 
     }
     @GetMapping("/categories")
-    public String categories(){
+    public String categories(ModelMap modelMap){
         return  "/categories";
     }
 
