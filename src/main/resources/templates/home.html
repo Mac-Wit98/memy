@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
 
-    <link rel="icon" th:href="@{/favicon.png}" />
-    <link rel="stylesheet" th:href="@{/vendor/materialize/css/materialize.css}" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
-    <link rel="stylesheet" th:href="@{/app.css}" />
+    <link rel="icon" th:href="@{/favicon.png}"/>
+    <link rel="stylesheet" th:href="@{/vendor/materialize/css/materialize.css}"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
+    <link rel="stylesheet" th:href="@{/app.css}"/>
 
     <link rel="icon" th:href="@{/favicon.png}"/>
 
@@ -44,9 +44,12 @@
             <form action="/search" method="get">
                 <div class="input-field">
                     <input name="q" type="search" placeholder="Wyszukiwanie..." required="required" autocomplete="on"/>
-                    <i><button type="submit" class="material-icons">search</button></i>
+                    <button><i th:type="submit" class="material-icons">search</i></button>
                 </div>
             </form>
+
+            <p th:if="${message}" th:text="${message}"></p>
+
         </div>
     </div>
 </div>

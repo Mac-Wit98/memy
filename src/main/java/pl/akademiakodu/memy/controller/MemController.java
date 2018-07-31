@@ -35,6 +35,9 @@ public class MemController {
     @GetMapping("/search")
     public String search(ModelMap modelMap, String q) {
         modelMap.put("gifs", gifDao.find(q));
+        if (gifDao.find(q).size() == 0) {
+            modelMap.put("message", "Nic nie znaleziono");
+        }
         return "home";
     }
 
