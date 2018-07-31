@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
     <link rel="icon" th:href="@{/favicon.png}" />
-
     <link rel="stylesheet" th:href="@{/vendor/materialize/css/materialize.css}" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
     <link rel="stylesheet" th:href="@{/app.css}" />
@@ -24,7 +23,7 @@
                 <li><a th:href="@{/favorites}">Favorites</a></li>
             </ul>
             <ul id="mobile-nav" class="side-nav">
-                <li class="active"><a th:href="@{/}">Explore</a></li>
+                <li class="active"><a th:href="@{/favorites}">Explore</a></li>
                 <li><a th:href="@{/categories}">Categories</a></li>
                 <li><a th:href="@{/favorites}">Favorites</a></li>
             </ul>
@@ -45,15 +44,14 @@
 </div>
 <div class="gifs container">
     <div class="row">
-        <h1>Miejsce na wyświetlenie gifów:)</h1>
         <div th:each="gif : ${gifs}" class="col s12 l4">
             <a th:href="@{|/gif/${gif.name}|}">
                 <img th:src="@{|/gifs/${gif.name}.gif|}" />
-                <!--      <a href="#" th:class="(${gif.favorite}? 'un' : '') + 'mark favorite'"></a> -->
             </a>
         </div>
     </div>
 </div>
+
 
 
 

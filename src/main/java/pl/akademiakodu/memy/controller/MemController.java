@@ -22,8 +22,9 @@ public class MemController {
 
 
     @GetMapping("/favorites")
-    public String favorites(){
-        return "/favorites";
+    public String favorites(ModelMap modelMap){
+        modelMap.put("favorites", gifDao.findAllFavorites());
+        return "favorites";
     }
     @GetMapping("/categories")
     public String categories(){
