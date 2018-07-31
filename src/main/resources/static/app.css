@@ -9,6 +9,10 @@ nav {
     box-shadow: none;
 }
 
+footer{
+    margin: 2px auto 0 auto;
+    text-align: center;
+}
 nav .brand-logo, nav ul li.active a {
     color: #fefefe;
 }
