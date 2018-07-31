@@ -7,6 +7,21 @@ public class Gif {
 
     private Integer id;
     private String name;
+    private boolean favorite;
+
+    public Gif(Integer id, String name, boolean favorite) {
+        this.id = id;
+        this.name = name;
+        this.favorite = favorite;
+    }
+
+    public boolean isFavorite() {
+        return favorite;
+    }
+
+    public void setFavorite(boolean favorite) {
+        this.favorite = favorite;
+    }
 
     public String gifPath() {
         return "gif/" + getName() + ".gif";

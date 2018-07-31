@@ -4,10 +4,10 @@
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-    <link rel="icon" th:href="@{/favicon.png}" />
-    <link rel="stylesheet" th:href="@{/vendor/materialize/css/materialize.css}" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
-    <link rel="stylesheet" th:href="@{/app.css}" />
+    <link rel="icon" th:href="@{/favicon.png}"/>
+    <link rel="stylesheet" th:href="@{/vendor/materialize/css/materialize.css}"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
+    <link rel="stylesheet" th:href="@{/app.css}"/>
 
     <title>Favorites</title>
 </head>
@@ -44,13 +44,17 @@
 </div>
 <div class="gifs container">
     <div class="row">
-        <h1>Miejsce na wyświetlanie gifów:)</h1>
+        <div th:each="gif : ${favorites}" class="col s12 l4">
+            <a th:href="@{|/gif/${gif.name}|}">
+                <img th:src="@{|/gifs/${gif.name}.gif|}" />
+            </a>
+        </div>
     </div>
 </div>
+</div>
 
-
-<script th:src="@{/vendor/jquery/jquery-1.11.3.js}"></script>
-<script th:src="@{/vendor/materialize/js/materialize.js}"></script>
-<script th:src="@{/app.js}"></script>
+    <script th:src="@{/vendor/jquery/jquery-1.11.3.js}"></script>
+    <script th:src="@{/vendor/materialize/js/materialize.js}"></script>
+    <script th:src="@{/app.js}"></script>
 </body>
 </html>
