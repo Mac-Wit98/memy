@@ -27,6 +27,17 @@ public class GifDaoImp implements GifDao {
     }
 
     @Override
+    public List<Gif> find(String q) {
+        List<Gif> search = new ArrayList<>();
+        for (Gif gif : gifs) {
+            if (gif.getName().contains(q)) {
+                search.add(gif);
+            }
+        }
+        return search;
+    }
+
+    @Override
     public List<Gif> findAllFavorites() {
         List<Gif> fav = new ArrayList<>();
         for (Gif favGif : gifs) {
@@ -36,6 +47,5 @@ public class GifDaoImp implements GifDao {
         }
         return fav;
     }
-
 
 }
