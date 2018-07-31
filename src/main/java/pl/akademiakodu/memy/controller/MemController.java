@@ -19,8 +19,6 @@ public class MemController {
         return "home";
     }
 
-
-
     @GetMapping("/favorites")
     public String favorites(){
         return "/favorites";
