@@ -28,4 +28,10 @@ public class MemController {
         return  "/categories";
     }
 
+    @GetMapping("/search")
+    public String search(ModelMap modelMap, String q) {
+        modelMap.put("gifs", gifDao.find(q));
+        return "home";
+    }
+
 }
