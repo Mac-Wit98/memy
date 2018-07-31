@@ -10,6 +10,7 @@ import pl.akademiakodu.memy.model.Gif;
 @Controller
 public class MemController {
 
+
     private GifDao gifDao = new GifDaoImp();
 
     @GetMapping("/")
@@ -17,6 +18,8 @@ public class MemController {
         modelMap.put("gifs", gifDao.findAll());
         return "home";
     }
+
+
 
     @GetMapping("/favorites")
     public String favorites(){
