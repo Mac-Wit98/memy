@@ -36,9 +36,12 @@
             <form action="/search" method="get">
                 <div class="input-field">
                     <input name="q" type="search" placeholder="Wyszukiwanie..." required="required" autocomplete="on"/>
-                    <i><button type="submit" class="material-icons">search</button></i>
+                    <button><i th:type="submit" class="material-icons">search</i></button>
                 </div>
             </form>
+
+            <p th:if="${message}" th:text="${message}"></p>
+
         </div>
     </div>
 </div>
