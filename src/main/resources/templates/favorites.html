@@ -42,12 +42,17 @@
         </div>
     </div>
 </div>
-<div class="gifs container">
-    <div class="row">
-        <h1>Miejsce na wyświetlanie gifów:)</h1>
+div class="gifs container">
+<div class="row">
+    <h1>Miejsce na wyświetlenie gifów:)</h1>
+    <div th:each="gif : ${fav}" class="col s12 l4 ">
+        <a th:href="@{|/gif/${gif.name}|}">
+            <img th:src="@{|/fav/${gif.name}.gif|}" />
+            <!--      <a href="#" th:class="(${gif.favorite}? 'un' : '') + 'mark favorite'"></a> -->
+        </a>
     </div>
 </div>
-
+</div>
 
 <script th:src="@{/vendor/jquery/jquery-1.11.3.js}"></script>
 <script th:src="@{/vendor/materialize/js/materialize.js}"></script>
