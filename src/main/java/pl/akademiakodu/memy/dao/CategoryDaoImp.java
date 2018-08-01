@@ -12,7 +12,7 @@ public class CategoryDaoImp  implements CategoryDao{
     static {
 
         categories.add(new Category(1, "Android"));
-        categories.add((new Category(2, "funny")));
+        categories.add((new Category(2, "Funny")));
         categories.add(new Category(3, "Programming"));
 
     }
