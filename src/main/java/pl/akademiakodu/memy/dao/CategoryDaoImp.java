@@ -5,8 +5,7 @@ import pl.akademiakodu.memy.model.Category;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CategoryDaoImp   {
-
+public class CategoryDaoImp {
 
     public static  List<Category> findAll(){
     List<Category> categories = new ArrayList<>();
@@ -15,7 +14,5 @@ public class CategoryDaoImp   {
         categories.add(new Category(3, "Programming"));
         return categories;
     }
-
-
 
 }

@@ -29,7 +29,6 @@ public class GifDaoImp implements GifDao  {
     @Override
     public List<Gif> find(String q) {
         List<Gif> search = new ArrayList<>();
-        List<String> e = new ArrayList<>();
         for (Gif gif : gifs) {
             if (gif.getName().contains(q)) {
                 search.add(gif);
