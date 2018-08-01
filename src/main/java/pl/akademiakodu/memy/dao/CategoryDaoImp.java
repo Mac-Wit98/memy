@@ -5,7 +5,7 @@ import pl.akademiakodu.memy.model.Category;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CategoryDaoImp implements CategoryDao {
+public class CategoryDaoImp  implements CategoryDao{
 
     private static List<Category> categories = new ArrayList<>();
 
