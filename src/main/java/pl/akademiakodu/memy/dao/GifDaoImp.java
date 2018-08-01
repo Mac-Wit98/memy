@@ -11,12 +11,12 @@ public class GifDaoImp implements GifDao  {
     private static List<Gif> gifs = new ArrayList<>();
 
     static {
-        gifs.add(new Gif(1, "android-explosion", false, CategoryDaoImp.findAll().get(0)));
-        gifs.add(new Gif(2, "ben-and-mike", false,CategoryDaoImp.findAll().get(1)));
-        gifs.add(new Gif(3, "book-dominos", true, CategoryDaoImp.findAll().get(2)));
-        gifs.add(new Gif(4, "compiler-bot", false, CategoryDaoImp.findAll().get(2)));
-        gifs.add(new Gif(5, "cowboy-coder",true, CategoryDaoImp.findAll().get(2)));
-        gifs.add(new Gif(6, "infinite-andrew", true, CategoryDaoImp.findAll().get(1)));
+        gifs.add(new Gif(1, "android-explosion", false ));
+        gifs.add(new Gif(2, "ben-and-mike", false));
+        gifs.add(new Gif(3, "book-dominos", true));
+        gifs.add(new Gif(4, "compiler-bot", false));
+        gifs.add(new Gif(5, "cowboy-coder",true));
+        gifs.add(new Gif(6, "infinite-andrew", true ));
 
     }
 
