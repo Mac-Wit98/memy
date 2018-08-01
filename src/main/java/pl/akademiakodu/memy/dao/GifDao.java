@@ -12,4 +12,6 @@ public interface GifDao  {
 
     List<Gif> findAllFavorites();
 
+    Gif findById(int id);
+
 }

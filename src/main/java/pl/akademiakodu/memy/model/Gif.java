@@ -1,17 +1,16 @@
 package pl.akademiakodu.memy.model;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Gif {
 
     private Integer id;
     private String name;
     private boolean favorite;
     private Category category;
+    private String userName;
 
-    public Gif(Integer id, String name, boolean favorite, Category category) {
+    public Gif(Integer id, String userName, String name, boolean favorite, Category category) {
         this.id = id;
+        this.userName = userName;
         this.name = name;
         this.favorite = favorite;
         this.category = category;
@@ -79,4 +78,11 @@ public class Gif {
                 '}';
     }
 
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
 }

@@ -16,6 +16,8 @@ public class MemController {
 
     private GifDao gifDao = new GifDaoImp();
 
+    private CategoryDao categoryDao;
+
 
     @GetMapping("/")
     public String home(ModelMap modelMap){
@@ -45,10 +47,16 @@ public class MemController {
         }
         return "home";
     }
-    @GetMapping("category/{id}")
+    @GetMapping("/category/{id}")
     public String show(@PathVariable Integer id, ModelMap modelMap){
-        modelMap.put("category", CategoryDaoImp.findAll());
+        modelMap.put("category", categoryDao.findById(id));
         return "category";
+    }
+
+    @GetMapping("gif/{id}")
+    public String showGif(@PathVariable Integer id, ModelMap modelMap) {
+        modelMap.put("gif", gifDao.findById(id));
+        return "gif-details";
     }
 
 }
