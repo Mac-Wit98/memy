@@ -1,5 +1,7 @@
 package pl.akademiakodu.memy.model;
 
+import java.util.List;
+
 public class Gif {
 
     private Integer id;
@@ -15,6 +17,8 @@ public class Gif {
         this.favorite = favorite;
         this.category = category;
     }
+    //public Gif(String name) {}
+
 
     public Category getCategory() {
         return category;
@@ -66,8 +70,8 @@ public class Gif {
         this.name = name;
     }
 
-    public String getPath(){
-        return "gifs/"+getName()+".gif";
+    public String getPath() {
+        return "gifs/" + getName() + ".gif";
     }
 
     @Override
@@ -85,4 +89,5 @@ public class Gif {
     public void setUserName(String userName) {
         this.userName = userName;
     }
+
 }
