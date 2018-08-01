@@ -75,6 +75,16 @@
 
 <script th:src="@{/vendor/jquery/jquery-1.11.3.js}"></script>
 <script th:src="@{/vendor/materialize/js/materialize.js}"></script>
-<script th:src="@{/app.js}"></script>
+<script th:src="@{/app.js}">
+
+<footer>
+
+    <p>copy Kacper&Maciek Java Bootcamp</p>
+
+    <div th:replace="fragments/footer :: 'footer'">
+    </div>
+
+</footer>
+
 </body>
 </html>
