@@ -42,7 +42,7 @@ public class GifDaoImp implements GifDao  {
     public List<Gif> find(String q) {
         List<Gif> search = new ArrayList<>();
         for (Gif gif : gifs) {
-            if (gif.getName().contains(q)) {
+            if ((gif.getName().contains(q))||(gif.getCategory().getName().contains(q))) {
                 search.add(gif);
             }
         }

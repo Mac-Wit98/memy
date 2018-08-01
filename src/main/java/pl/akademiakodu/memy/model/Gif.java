@@ -3,7 +3,6 @@ package pl.akademiakodu.memy.model;
 import java.util.List;
 
 public class Gif {
-    private int a;
     private Integer id;
     private String name;
     private boolean favorite;
