@@ -4,7 +4,7 @@ import pl.akademiakodu.memy.model.Gif;
 
 import java.util.List;
 
-public interface GifDao {
+public interface GifDao  {
 
     List<Gif> findAll();
 
