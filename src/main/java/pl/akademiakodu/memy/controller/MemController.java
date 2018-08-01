@@ -15,6 +15,7 @@ public class MemController {
 
 
     private GifDao gifDao = new GifDaoImp();
+    private  CategoryDao categoryDao;
 
 
     @GetMapping("/")
@@ -47,7 +48,7 @@ public class MemController {
     }
     @GetMapping("category/{id}")
     public String show(@PathVariable Integer id, ModelMap modelMap){
-        modelMap.put("category", CategoryDaoImp.findAll());
+        modelMap.put("category", categoryDao.findById(id));
         return "category";
     }
 
