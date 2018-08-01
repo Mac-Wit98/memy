@@ -3,11 +3,14 @@ package pl.akademiakodu.memy.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import pl.akademiakodu.memy.dao.CategoryDao;
 import pl.akademiakodu.memy.dao.CategoryDaoImp;
 import pl.akademiakodu.memy.dao.GifDao;
 import pl.akademiakodu.memy.dao.GifDaoImp;
+import pl.akademiakodu.memy.model.Category;
 import pl.akademiakodu.memy.model.Gif;
 
 @Controller
@@ -15,7 +18,7 @@ public class MemController {
 
 
     private GifDao gifDao = new GifDaoImp();
-    private  CategoryDao categoryDao;
+    private  CategoryDao categoryDao = new CategoryDaoImp();
 
 
 
@@ -49,8 +52,11 @@ public class MemController {
     }
     @GetMapping("/category/{id}")
     public String show(@PathVariable Integer id, ModelMap modelMap){
-        modelMap.put("category", categoryDao.findById(id));
+        Category category = categoryDao.findById(id);
+        modelMap.put("category",category);
+        modelMap.put("gifs", gifDao.findGif(categoryDao.findById(id).getName()));
         return "category";
+
     }
 
     @GetMapping("gif/{id}")
