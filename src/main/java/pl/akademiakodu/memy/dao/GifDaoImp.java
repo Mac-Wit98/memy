@@ -11,6 +11,7 @@ public class GifDaoImp implements GifDao  {
     private static List<Gif> gifs = new ArrayList<>();
 
     static {
+
         gifs.add(new Gif(1, "Adam", "android-explosion", false, CategoryDaoImp.findAll().get(0)));
         gifs.add(new Gif(2, "Witosik", "ben-and-mike", false,CategoryDaoImp.findAll().get(1)));
         gifs.add(new Gif(3, "Kacd", "book-dominos", true, CategoryDaoImp.findAll().get(2)));
