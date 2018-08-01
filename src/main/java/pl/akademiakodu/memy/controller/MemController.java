@@ -15,7 +15,7 @@ public class MemController {
 
 
     private GifDao gifDao = new GifDaoImp();
-    private  CategoryDao categoryDao;
+    private  CategoryDao categoryDao = new CategoryDaoImp();
 
 
 
