@@ -16,7 +16,6 @@ public class Gif {
         this.favorite = favorite;
         this.category = category;
     }
-    //public Gif(String name) {}
 
 
     public Category getCategory() {

@@ -2,10 +2,7 @@ package pl.akademiakodu.memy.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 import pl.akademiakodu.memy.dao.CategoryDao;
 import pl.akademiakodu.memy.dao.CategoryDaoImp;
 import pl.akademiakodu.memy.dao.GifDao;
@@ -18,28 +15,28 @@ public class MemController {
 
 
     private GifDao gifDao = new GifDaoImp();
-    private  CategoryDao categoryDao = new CategoryDaoImp();
-
+    private CategoryDao categoryDao = new CategoryDaoImp();
 
 
     @GetMapping("/")
-    public String home(ModelMap modelMap){
+    public String home(ModelMap modelMap) {
         modelMap.put("gifs", gifDao.findAll());
         return "home";
     }
 
     @GetMapping("/favorites")
-    public String favorites(ModelMap modelMap){
+    public String favorites(ModelMap modelMap) {
 
         modelMap.put("favorites", gifDao.findAllFavorites());
         return "favorites";
 
 
     }
+
     @GetMapping("/categories")
-    public String categories(ModelMap modelMap){
-        modelMap.put("categories", CategoryDaoImp.findAll() );
-        return  "/categories";
+    public String categories(ModelMap modelMap) {
+        modelMap.put("categories", CategoryDaoImp.findAll());
+        return "/categories";
     }
 
     @GetMapping("/search")
@@ -50,6 +47,7 @@ public class MemController {
         }
         return "home";
     }
+
     @GetMapping("/category/{name}")
     public String show(@PathVariable String name, ModelMap modelMap){
         Category category = categoryDao.findByName(name);
@@ -63,5 +61,7 @@ public class MemController {
         modelMap.put("gif", gifDao.findById(id));
         return "gif-details";
     }
+
+
 
 }
