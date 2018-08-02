@@ -28,4 +28,10 @@ public class CategoryDaoImp  implements CategoryDao{
                 findFirst().get();
     }
 
+    @Override
+    public Category findByName(String name) {
+        return categories.stream().filter(category -> category.getName().equals(name)).findFirst().get();
+    }
+
+
 }

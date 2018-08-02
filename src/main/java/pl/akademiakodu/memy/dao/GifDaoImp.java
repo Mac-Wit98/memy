@@ -67,5 +67,4 @@ public class GifDaoImp implements GifDao  {
                 findFirst().get();
     }
 
-
 }

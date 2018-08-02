@@ -2,10 +2,7 @@ package pl.akademiakodu.memy.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 import pl.akademiakodu.memy.dao.CategoryDao;
 import pl.akademiakodu.memy.dao.CategoryDaoImp;
 import pl.akademiakodu.memy.dao.GifDao;
@@ -18,28 +15,28 @@ public class MemController {
 
 
     private GifDao gifDao = new GifDaoImp();
-    private  CategoryDao categoryDao = new CategoryDaoImp();
-
+    private CategoryDao categoryDao = new CategoryDaoImp();
 
 
     @GetMapping("/")
-    public String home(ModelMap modelMap){
+    public String home(ModelMap modelMap) {
         modelMap.put("gifs", gifDao.findAll());
         return "home";
     }
 
     @GetMapping("/favorites")
-    public String favorites(ModelMap modelMap){
+    public String favorites(ModelMap modelMap) {
 
         modelMap.put("favorites", gifDao.findAllFavorites());
         return "favorites";
 
 
     }
+
     @GetMapping("/categories")
-    public String categories(ModelMap modelMap){
-        modelMap.put("categories", CategoryDaoImp.findAll() );
-        return  "/categories";
+    public String categories(ModelMap modelMap) {
+        modelMap.put("categories", CategoryDaoImp.findAll());
+        return "/categories";
     }
 
     @GetMapping("/search")
@@ -50,13 +47,20 @@ public class MemController {
         }
         return "home";
     }
-    @GetMapping("/category/{id}")
-    public String show(@PathVariable Integer id, ModelMap modelMap){
-        Category category = categoryDao.findById(id);
-        modelMap.put("category",category);
-        modelMap.put("gifs", gifDao.findGif(categoryDao.findById(id).getName()));
-        return "category";
 
+  // @GetMapping("/category/{id}")
+  // public String show(@PathVariable Integer id, ModelMap modelMap) {
+  //     Category category = categoryDao.findById(id);
+  //     modelMap.put("category", category);
+  //     modelMap.put("gifs", gifDao.findGif(categoryDao.findById(id).getName()));
+  //     return "category";
+  // }
+   @GetMapping("/category/{name}")
+   public String showName(@PathVariable String name, ModelMap modelMap){
+        Category category = categoryDao.findByName(name);
+        modelMap.put("category", category) ;
+        modelMap.put("gifs", gifDao.findGif(categoryDao.findByName(name).getName()));
+        return "category";
     }
 
     @GetMapping("gif/{id}")
@@ -64,5 +68,7 @@ public class MemController {
         modelMap.put("gif", gifDao.findById(id));
         return "gif-details";
     }
+
+
 
 }

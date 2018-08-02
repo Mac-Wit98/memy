@@ -9,5 +9,7 @@ public interface CategoryDao {
         return null;
     }
     Category findById(Integer id);
+    Category findByName(String name);
+
 
 }

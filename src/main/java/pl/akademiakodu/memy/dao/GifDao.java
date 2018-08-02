@@ -17,4 +17,5 @@ public interface GifDao  {
 
     Gif findById(int id);
 
+
 }
