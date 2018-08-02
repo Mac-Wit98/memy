@@ -50,13 +50,12 @@ public class MemController {
         }
         return "home";
     }
-    @GetMapping("/category/{id}")
-    public String show(@PathVariable Integer id, ModelMap modelMap){
-        Category category = categoryDao.findById(id);
+    @GetMapping("/category/{name}")
+    public String show(@PathVariable String name, ModelMap modelMap){
+        Category category = categoryDao.findByName(name);
         modelMap.put("category",category);
-        modelMap.put("gifs", gifDao.findGif(categoryDao.findById(id).getName()));
+        modelMap.put("gifs", gifDao.findGif(categoryDao.findByName(name).getName()));
         return "category";
-
     }
 
     @GetMapping("gif/{id}")

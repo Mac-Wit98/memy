@@ -10,4 +10,6 @@ public interface CategoryDao {
     }
     Category findById(Integer id);
 
+    Category findByName(String name);
+
 }
